@@ -1,0 +1,4 @@
+g++ -O3 containers_mia.cpp -std=c++17 -o containers_mia -g
+perf record --call-graph=dwarf taskset -c 10 ./containers_mia
+perf report
+perf report --stdio

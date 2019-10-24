@@ -1,0 +1,5 @@
+make_vector_out 10000 random ints in 2 ms
+rvo: 10000 random ints in 1 ms
+norvo: 10000 random ints in 1 ms
+rvo: 10000 random ints in 1 ms
+make_vector_out 10000 random ints in 1 ms

@@ -45,9 +45,18 @@ int main() {
   for (int k=0; k<10000; ++k) {
     if (k>0) delta -= (std::chrono::high_resolution_clock::now()-start);    
     for (int i=0, n=pointsI.size(); i<n; ++i) {
+      /* WRONG !!! 
+	 - if pointsO=pointsI it is wrong
+	 - makes x3 norm()
+	 - makes x3 division
       pointsO[i].x = pointsI[i].x/pointsI[i].norm();
       pointsO[i].y = pointsI[i].y/pointsI[i].norm();
       pointsO[i].z = pointsI[i].z/pointsI[i].norm();
+      */
+      double inv_norm_pointI = 1./pointsI[i].norm();
+      pointsO[i].x = pointsI[i].x*inv_norm_pointI;
+      pointsO[i].y = pointsI[i].y*inv_norm_pointI;
+      pointsO[i].z = pointsI[i].z*inv_norm_pointI;
     }
     if (k>0) delta += (std::chrono::high_resolution_clock::now()-start);
     for (auto &p : pointsO) sum+=p.x;

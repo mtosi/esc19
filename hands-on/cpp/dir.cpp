@@ -43,6 +43,7 @@ std::vector<std::string> entries(/* add the right arguments here */)
 int main(int argc, char* argv[])
 {
   std::string const name = argc > 1 ? argv[1] : ".";
+  std::cout << name << '\n';
 
   // create a smart pointer to a DIR here, with a deleter
   // relevant functions and data structures are

@@ -22,14 +22,21 @@ int main( int argc, char**)
    // 6x faster (on my test machine, with -O2)
    if (argc>1)  std::sort(test.begin(), test.end());
 
-    long long sum = 0;
+   long long sum = 0;
 
     for (unsigned i = 0; i < 100000; ++i)
     {
         for (unsigned c = 0; c < arraySize; ++c)
         {
+	  //	  sum += (test[c] >= 128) ? data[c] : 0;
+	  //	  sum += (test[c] >= 128) ? test[c] : 0;
+	  //	  auto x = data[c];
+	  //	  if (test[c] >= 128)
+	  //	    sum += x;
+	  
             if (test[c] >= 128)
                 sum += data[c];
+
         }
     }
     std::cout << "sum = " << sum << ' ' << argc << std::endl;

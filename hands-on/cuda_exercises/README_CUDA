@@ -1,0 +1,6 @@
+module avail
+module load compilers/gcc-7.3.0_sl7
+g++ --version
+module load compilers/cuda-10.0
+nvcc --version
+nvcc .cu -o

@@ -1,0 +1,5 @@
+# compile
+g++ std_threads.cpp -Wall -lpthread -o std_threads
+
+source /storage/gpfs_maestro_home/hpc_software/tbb2019_20191006oss/bin/tbbvars.sh intel64 linux auto_tbbroot
+g++ std_tbb.cpp -Wall -ltbb -o std_tbb
