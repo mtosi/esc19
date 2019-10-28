@@ -21,13 +21,16 @@ int main()
 
   auto N = 10;
   tbb::parallel_for(
-		    tbb::blocked_range<int>(0,N,<G>),
+		    //		    tbb::blocked_range<int>(0,N,<G>),
+		    tbb::blocked_range<int>(0,N),
 		    [&](const tbb::blocked_range<int>& range)
 		    {
 		      for(int i = range.begin(); i< range.end(); ++i)
 			{
 			  x[i]++; }
-		    }, <partitioner>);
+		      //		    }, <partitioner>
+		    }
+		    );
 
   return 0;
 }

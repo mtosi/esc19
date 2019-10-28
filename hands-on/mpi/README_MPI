@@ -1,0 +1,2 @@
+mpic++ hello_world.cpp -o hello_world
+mpirun -np 2 --machinefile hostfile.txt ./hello_world

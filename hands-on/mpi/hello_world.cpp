@@ -14,5 +14,8 @@ int main(int argc, char** argv) {
   int name_len;
   MPI_Get_processor_name(processor_name, &name_len);
   std::cout << "Hello world from processor " << processor_name << " rank " << rank << " of " << world_size << std::endl;
+  std::cout << processor_name << " rank " << rank << " of " << world_size << "MPI_MAX_PROCESSOR_NAME: " << MPI_MAX_PROCESSOR_NAME << std::endl;
+  std::cout << processor_name << " rank " << rank << " of " << world_size << "MPI_COMM_WORLD: " << MPI_COMM_WORLD << std::endl;
+
   MPI_Finalize();
 }
